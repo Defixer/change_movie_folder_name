@@ -3,6 +3,10 @@ import sys
 
 files = os.listdir(sys.argv[1])
 for file in files:
-	new_file = os.path.join(sys.argv[1], file.split("[")[0])
-	old_file = os.path.join(sys.argv[1], file)
-	os.rename(old_file, new_file)
+	if file[0] != ".":
+		print("File: {}".format(file))
+		old_file = os.path.join(sys.argv[1], file)
+		print("Old File: {}".format(old_file))
+		new_file = os.path.join(sys.argv[1], file.split("[")[0].rstrip())
+		print("New File: {}".format(new_file))
+		os.rename(old_file, new_file)
