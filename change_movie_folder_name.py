@@ -3,6 +3,7 @@ import sys
 import tkinter as tk
 from tkinter import filedialog
 
+application_window = tk.Tk()
 directory = filedialog.askdirectory(parent=application_window,
 										initialdir=os.getcwd(),
 										title="Please select a folder")
